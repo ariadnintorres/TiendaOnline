@@ -344,8 +344,74 @@ public class P4EJ1 {
 	}*/
 
 	
+		// =========================================================
+		// TAREA DE NANI (A4): BAJA DE PRODUCTO
+		// =========================================================
+		public static int bajaProducto(Scanner scanner, String[] nombres, double[] precios, int[] stock, int numProductos) {
+		    
+		    if (numProductos == 0) {
+		        System.out.println(YELLOW + "⚠️ El almacén está vacío. No hay productos para dar de baja." + RESET);
+		        return numProductos;
+		    }
+
+		    // 1. Obtener Nombre del Producto a Eliminar
+		    System.out.print(YELLOW + "Introduzca el nombre del producto a eliminar: " + RESET);
+		    String nombreBaja = scanner.nextLine().trim();
+
+		    // 2. Buscar Índice (Usa A5)
+		    int indiceEliminar = buscarIndiceProducto(nombreBaja, nombres, numProductos);
+
+		    if (indiceEliminar == -1) {
+		        System.out.println(RED + "❌ ERROR: El producto '" + nombreBaja + "' no se encontró en el almacén." + RESET);
+		        return numProductos;
+		    }
+
+		    // 3. Desplazamiento de Elementos (Tapar el hueco)
+		    String nombreProductoEliminado = nombres[indiceEliminar];
+		    
+		    // Movemos los elementos desde el índice a eliminar (i) hasta el penúltimo real
+		    for (int i = indiceEliminar; i < numProductos - 1; i++) {
+		        nombres[i] = nombres[i + 1];
+		        precios[i] = precios[i + 1];
+		        stock[i] = stock[i + 1];
+		    }
+		    
+		    // 4. Limpieza del Último Elemento Lógico
+		    // Limpiamos la posición que ahora es el final de los datos
+		    nombres[numProductos - 1] = null;
+		    precios[numProductos - 1] = 0.0;
+		    stock[numProductos - 1] = 0;
+
+		    // 5. Decrementar el Contador
+		    numProductos--;
+
+		    System.out.println(GREEN + "✅ Producto '" + nombreProductoEliminado + "' eliminado con éxito. Nuevo stock: " + numProductos + RESET);
+		    
+		    return numProductos;
+		}
 	
-	
-	
+		// =========================================================
+		// TAREA DE NANI (A5): BÚSQUEDA DE PRODUCTOS (¡Necesaria!)
+		// =========================================================
+
+		/**
+		 * @cabecera public static int buscarIndiceProducto(String nombreBuscado, String[] nombres, int numProductos)
+		 * @descripcion Busca un producto por su nombre y devuelve el índice.
+		 * @return El índice del producto (0, 1, 2...) si se encuentra, o -1 si no existe.
+		 */
+		public static int buscarIndiceProducto(String nombreBuscado, String[] nombres, int numProductos) {
+		    // 1. Limpiamos el nombre buscado (usando .trim() que ya discutimos)
+		    String nombreLimpio = nombreBuscado.trim();
+		    
+		    // 2. Recorremos el array de nombres SOLO hasta numProductos
+		    for (int i = 0; i < numProductos; i++) {
+		        // Comparamos ignorando mayúsculas/minúsculas
+		        if (nombres[i] != null && nombres[i].equalsIgnoreCase(nombreLimpio)) {
+		            return i; // Producto encontrado
+		        }
+		    }
+		    
+		    return -1; // Producto NO encontrado
+		}
 	
 }
