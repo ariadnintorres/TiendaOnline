@@ -85,20 +85,10 @@ public class P4EJ1 {
 		System.out.println(GREEN + ">> Pulsa ENTER para iniciar █ ..." + RESET);
 		
 	        sc.nextLine();
+	    System.out.println( CYAN +"\n  Bienvenido a CLOUD GAME de Videojuegos 🎮" + RESET);
 
-
-	        // ==== PRODUCTOS ====
-	        String productos[] = {
-	                "The Legend of Zelda: Breath of the Wild",
-	                "Elden Ring",
-	                "Minecraft",
-	                "GTA V",
-	                "Hogwarts Legacy",
-	                "The Witcher 3",
-	                "Super Mario Odyssey "
-	        };
-
-	        
+	       
+	                
 	     // Persona B: Métodos de compra y carrito
 
 	        int carrito[] = new int[0];
@@ -108,14 +98,14 @@ public class P4EJ1 {
 	        do {
 	            // ==== MENÚ ====
 	        	mostrarMenu();
-	            opcion = pedirEnteroSeguro(sc,"Elige una opción del menú: ");
+	            opcion = pedirEnteroSeguro(sc," ");
 
 	            switch (opcion) {
 
 	                case 1:
 	                    System.out.println("\n--- VIDEOJUEGOS DISPONIBLES ---");
-	                    for (int i = 0; i < productos.length; i++) {
-	                        System.out.println(i + ". " + productos[i] + " - €" + precios[i]);
+	                    for (int i = 0; i < nombres.length; i++) {
+	                        System.out.println(i + ". " + nombres[i] + " - €" + precios[i]);
 	                    }
 	                    break;
 
@@ -123,17 +113,17 @@ public class P4EJ1 {
 	                    System.out.println("\nIngresa el número del videojuego que quieres agregar:");
 	                    int prod = sc.nextInt();
 
-	                    if (prod >= 0 && prod < productos.length) {
+	                    if (prod >= 0 && prod < nombres.length) {
 	                        carrito[cantidadCarrito] = prod;
 	                        cantidadCarrito++;
-	                        System.out.println(productos[prod] + " añadido al carrito.");
+	                        System.out.println(nombres[prod] + " añadido al carrito.");
 	                    } else {
 	                        System.out.println("Número inválido.");
 	                    }
 	                    break;
 
 	                case 3:
-	                	carrito(cantidadCarrito, carrito, productos, precios);
+	                	carrito(cantidadCarrito, carrito, nombres, precios);
 	                    break;
 
 	                case 4:
@@ -155,36 +145,33 @@ public class P4EJ1 {
 	
 	public static void mostrarMenu() {
 	    // ==== MENÚ ====
-        System.out.println("\n--- MENÚ TIENDA ONLINE ---");
-        System.out.println("1. Ver videojuegos disponibles");
-        System.out.println("2. Agregar videojuego al carrito");
-        System.out.println("3. Ver carrito");
-        System.out.println("4. Calcular total a pagar");
-        System.out.println("5. Salir");
-
-        System.out.println( CYAN +"\nBienvenido a la Tienda Online CLOUD GAME de Videojuegos 🎮" + RESET);
-        System.out.println("");
-        System.out.println(SALMON + "-".repeat(45) + RESET);
         
-        // --- 3. LISTA DE OPCIONES ---
+        System.out.println(LIGHT_PINK + "═".repeat(45) + RESET);
         
+        // --- . LISTA DE OPCIONES ---
+        System.out.println(LIGHT_PINK + "|" + RESET + " " + WHITE + "           MENÚ TIENDA ONLINE" + " ".repeat(13) + LIGHT_PINK + "|" + RESET);
+        System.out.println(LIGHT_PINK + "|" + RESET + " " + WHITE + "                               " + " ".repeat(11) + LIGHT_PINK + "|" + RESET);
         // Opción 1: Catálogo (Texto en Blanco)
-        System.out.println(SALMON + "|" + RESET + " " + WHITE + "[1] Explorar Catálogo de Juegos" + " ".repeat(14) + SALMON + "|" + RESET);
+        System.out.println(LIGHT_PINK + "|" + RESET + " " + WHITE + "[1] Ver videojuegos disponibles" + " ".repeat(11) + LIGHT_PINK + "|" + RESET);
         
         // Opción 2: Carrito
-        System.out.println(SALMON + "|" + RESET + " " + WHITE + "[2] Ver Carrito de Compras" + " ".repeat(18) + SALMON + "|" + RESET);
+        System.out.println(LIGHT_PINK + "|" + RESET + " " + WHITE + "[2] Agregar videojuego al carrito " + " ".repeat(8) + LIGHT_PINK + "|" + RESET);
         
         // Opción 3: Finalizar Compra
-        System.out.println(SALMON + "|" + RESET + " " + WHITE + "[3] Pagar y Finalizar Pedido" + " ".repeat(17) + SALMON + "|" + RESET);
+        System.out.println(LIGHT_PINK + "|" + RESET + " " + WHITE + "[3] Ver carrito" + " ".repeat(27) + LIGHT_PINK + "|" + RESET);
+        System.out.println(LIGHT_PINK + "|" + RESET + " " + WHITE + "[4] Calcular total a pagar" + " ".repeat(16) + LIGHT_PINK + "|" + RESET);
         
         // Separador (en Salmon)
-        System.out.println(SALMON + "|"+ "-".repeat(43) + "|" + RESET);
+        System.out.println(LIGHT_PINK + "|"+ "-".repeat(43) + "|" + RESET);
         
         // Opción 4: Salir
-        System.out.println(SALMON + "|" + RESET + " " + WHITE + "[4] Salir y Cerrar Tienda" + " ".repeat(20) + SALMON + "|" + RESET);
+     
+        
+        System.out.println(LIGHT_PINK + "|" + RESET + " " + WHITE + "[5] Salir y Cerrar Tienda" + " ".repeat(17) + LIGHT_PINK + "|" + RESET);
+        
         
         // --- 4. PIE DE PÁGINA Y SOLICITUD DE ENTRADA ---
-        System.out.println(SALMON + "═".repeat(45) + RESET);
+        System.out.println(LIGHT_PINK + "═".repeat(45) + RESET);
         System.out.println(GREEN + ">> Seleccione una opción (1-4): " + RESET);
         
 	}
@@ -200,6 +187,44 @@ public class P4EJ1 {
 			}
 		}
 	}
+	
+	public static double leerDoublePositivo(Scanner sc, String mensaje) {
+		while (true) {
+			try {
+				System.out.print(mensaje);
+				double valor = sc.nextDouble();
+				if (valor > 0) {
+					return valor;
+				}else {
+					System.out.println("Error: El número debe ser positivo.");
+				}
+				
+			} catch (InputMismatchException e) {
+				System.out.println("Error: Introduce un número decimal válido.");
+				sc.nextLine();
+			}
+		}
+	}
+	
+	public static int leerEnteroNoNegativo(Scanner sc, String mensaje) {
+		while (true) {
+			try {
+				System.out.print(mensaje);
+				int valor = sc.nextInt();
+				
+				if (valor >= 0) {
+					return valor;
+				}else {
+					System.out.println("Error: El número no puede ser negativo.");
+				}
+				
+			} catch (InputMismatchException e) {
+				System.out.println("Error: Introduce un número entero válido.");
+				sc.nextLine();
+			}
+		}
+	}
+	
 	
 	//carrito si esta vacio y los productos y precios 
 	public static void carrito(int cantidadCarrito, int [] carrito, String [] productos, double [] precios ) {
