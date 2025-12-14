@@ -20,11 +20,13 @@ public class P4EJ1 {
 	public static final String PINK_BG = "\u001B[48;5;201m";
 	public static final String GRAY_BG = "\u001B[48;5;240m";
 	public static final double IVA_APLICADO = 0.21; // 21%
+	
 	public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
-        // [MENSAJE DE BIENVENIDA]
+        // [MENSAJE DE BIENVENIDA Ariadna Sinay Torres Casique y Ariadni Noemy Torres Casique]
+        
         System.out.println(BLUE + "##########################################" + RESET);
 		System.out.println(BLUE + "#                                        #" + RESET);
 		System.out.println(BLUE + "#  " + LIGHT_PINK + "  ████  ██     ████  ██  ██ ████   " + BLUE + "   #" + RESET);
@@ -37,7 +39,7 @@ public class P4EJ1 {
 		System.out.println(BLUE + "#  "+ FUCHSIA + "           sina y nani    "+  BLUE   +"            #" + RESET);
 		System.out.println(BLUE + "##########################################" + RESET);
 		System.out.println();
-		System.out.println(GREEN + ">> Pulsa ENTER para iniciar █ ..." + RESET);
+		System.out.println(GREEN + ">> Pulsa ENTER para iniciar ..." + RESET);
 		
 		sc.nextLine();
        
@@ -83,7 +85,7 @@ public class P4EJ1 {
 
 		                case 1: // ALTA DE PRODUCTO 
 		                    if (numProductos == nombres.length) {
-		                        System.out.println(YELLOW + "⚠️ Capacidad agotada (" + nombres.length + "). Redimensionando arrays..." + RESET);
+		                        System.out.println(YELLOW + " Capacidad agotada (" + nombres.length + "). Redimensionando arrays..." + RESET);
 		                        int nuevoTamanio = nombres.length + 10;
 		                        nombres = redimensionarArrayString(nombres, numProductos, nuevoTamanio);
 		                        precios = redimensionarArrayDouble(precios, numProductos, nuevoTamanio);
@@ -127,7 +129,7 @@ public class P4EJ1 {
 		                    break;
 
 		                default:
-		                    System.out.println(RED + "Opción inválida, intenta nuevamente." + RESET);
+		                    System.out.println(RED + " (￢_￢;) Opción inválida, intenta nuevamente." + RESET);
 		            }
 
 		        } while (opcion != 0);
@@ -141,21 +143,21 @@ public class P4EJ1 {
 
 		    public static void mostrarMenu() {
 		        System.out.println(LIGHT_PINK + "═".repeat(45) + RESET);
-		        System.out.println(LIGHT_PINK + "|" + RESET + " " + WHITE + "      MENÚ PRINCIPAL DE TIENDA" + " ".repeat(14) + LIGHT_PINK + "|" + RESET);
+		        System.out.println(LIGHT_PINK + "|" + RESET + " " + WHITE + "      MENÚ PRINCIPAL DE TIENDA" + " ".repeat(12) + LIGHT_PINK + "|" + RESET);
 		        System.out.println(LIGHT_PINK + "|"+ "-".repeat(43) + "|" + RESET);
 
-		        System.out.println(LIGHT_PINK + "|" + RESET + " " + WHITE + "Gestión de Inventario (ADMIN):" + " ".repeat(16) + LIGHT_PINK + "|" + RESET);
-		        System.out.println(LIGHT_PINK + "|" + RESET + " " + WHITE + "[1] Alta de Producto (A3, A0)" + " ".repeat(13) + LIGHT_PINK + "|" + RESET);
-		        System.out.println(LIGHT_PINK + "|" + RESET + " " + WHITE + "[2] Consulta de Productos (A2)" + " ".repeat(12) + LIGHT_PINK + "|" + RESET);
-		        System.out.println(LIGHT_PINK + "|" + RESET + " " + WHITE + "[3] Modificación de Producto (B2)" + " ".repeat(10) + LIGHT_PINK + "|" + RESET);
-		        System.out.println(LIGHT_PINK + "|" + RESET + " " + WHITE + "[4] Baja de Producto (A4)" + " ".repeat(17) + LIGHT_PINK + "|" + RESET);
+		        System.out.println(LIGHT_PINK + "|" + RESET + " " + WHITE + "Gestión de Inventario (ADMIN):" + " ".repeat(12) + LIGHT_PINK + "|" + RESET);
+		        System.out.println(LIGHT_PINK + "|" + RESET + " " + WHITE + "[1] Alta de Producto         " + " ".repeat(13) + LIGHT_PINK + "|" + RESET);
+		        System.out.println(LIGHT_PINK + "|" + RESET + " " + WHITE + "[2] Consulta de Productos     " + " ".repeat(12) + LIGHT_PINK + "|" + RESET);
+		        System.out.println(LIGHT_PINK + "|" + RESET + " " + WHITE + "[3] Modificación de Producto     " + " ".repeat(9) + LIGHT_PINK + "|" + RESET);
+		        System.out.println(LIGHT_PINK + "|" + RESET + " " + WHITE + "[4] Baja de Producto     " + " ".repeat(17) + LIGHT_PINK + "|" + RESET);
 		        System.out.println(LIGHT_PINK + "|"+ "-".repeat(43) + "|" + RESET);
 
 		        System.out.println(LIGHT_PINK + "|" + RESET + " " + WHITE + "Transacción (CLIENTE):" + " ".repeat(20) + LIGHT_PINK + "|" + RESET);
-		        System.out.println(LIGHT_PINK + "|" + RESET + " " + WHITE + "[5] Ver Artículos Disponibles (A2)" + " ".repeat(8) + LIGHT_PINK + "|" + RESET);
-		        System.out.println(LIGHT_PINK + "|" + RESET + " " + WHITE + "[6] Agregar Producto al Carrito (B4)" + " ".repeat(6) + LIGHT_PINK + "|" + RESET);
+		        System.out.println(LIGHT_PINK + "|" + RESET + " " + WHITE + "[5] Ver Artículos Disponibles     " + " ".repeat(8) + LIGHT_PINK + "|" + RESET);
+		        System.out.println(LIGHT_PINK + "|" + RESET + " " + WHITE + "[6] Agregar Producto al Carrito     " + " ".repeat(6) + LIGHT_PINK + "|" + RESET);
 		        System.out.println(LIGHT_PINK + "|" + RESET + " " + WHITE + "[7] Ver Carrito Actual" + " ".repeat(20) + LIGHT_PINK + "|" + RESET);
-		        System.out.println(LIGHT_PINK + "|" + RESET + " " + WHITE + "[8] Finalizar Compra y Pagar (B5)" + " ".repeat(9) + LIGHT_PINK + "|" + RESET);
+		        System.out.println(LIGHT_PINK + "|" + RESET + " " + WHITE + "[8] Finalizar Compra y Pagar     " + " ".repeat(9) + LIGHT_PINK + "|" + RESET);
 		        
 		        System.out.println(LIGHT_PINK + "|"+ "-".repeat(43) + "|" + RESET);
 		        System.out.println(LIGHT_PINK + "|" + RESET + " " + WHITE + "[0] Salir y Cerrar Tienda" + " ".repeat(17) + LIGHT_PINK + "|" + RESET);
@@ -173,7 +175,7 @@ public class P4EJ1 {
 		                System.out.print(mensaje);
 		                return sc.nextInt();
 		            } catch (InputMismatchException e) {
-		                System.out.println(RED + "❌ Error: introduce un número entero válido." + RESET);
+		                System.out.println(RED + "(￢_￢;) Error: introduce un número entero válido." + RESET);
 		                sc.nextLine(); // Limpiar el buffer si hay error
 		            }
 		        }
@@ -186,10 +188,10 @@ public class P4EJ1 {
 		                System.out.print(YELLOW + mensaje + RESET);
 		                valor = sc.nextDouble(); 
 		                if (valor <= 0) {
-		                    System.out.println(RED + "❌ Error: El valor debe ser un número positivo (> 0)." + RESET);
+		                    System.out.println(RED + "Error: El valor debe ser un número positivo (> 0)." + RESET);
 		                }
 		            } catch (InputMismatchException e) {
-		                System.out.println(RED + "❌ Error: Entrada inválida. Por favor, ingrese un número decimal." + RESET);
+		                System.out.println(RED + "Error: Entrada inválida. Por favor, ingrese un número decimal." + RESET);
 		                sc.nextLine();
 		            }
 		        }
@@ -247,7 +249,7 @@ public class P4EJ1 {
 		    public static int altaProducto(Scanner sc, String[] nombres, double[] precios, int[] stock, int numProductos) {
 
 		        if (numProductos == nombres.length) {
-		            System.out.println(RED + "❌ ERROR: Capacidad del almacén agotada. Redimensione antes de intentar un Alta." + RESET);
+		            System.out.println(RED + " ERROR: Capacidad del almacén agotada. Redimensione antes de intentar un Alta." + RESET);
 		            return numProductos; 
 		        }
 
@@ -259,7 +261,7 @@ public class P4EJ1 {
 		            nuevoNombre = sc.nextLine().trim(); 
 
 		            if (nuevoNombre.isEmpty()) {
-		                System.out.println(RED + "❌ El nombre del producto no puede estar vacío." + RESET);
+		                System.out.println(RED + " El nombre del producto no puede estar vacío." + RESET);
 		                indiceExistente = 0;
 		                continue;
 		            }
@@ -267,7 +269,7 @@ public class P4EJ1 {
 		            indiceExistente = buscarIndiceProducto(nuevoNombre, nombres, numProductos);
 
 		            if (indiceExistente != -1) {
-		                System.out.println(RED + "⚠️ ERROR: El producto '" + nuevoNombre + "' ya está registrado. Debe introducir uno diferente." + RESET);
+		                System.out.println(RED + " ERROR: El producto '" + nuevoNombre + "' ya está registrado. Debe introducir uno diferente." + RESET);
 		            }
 		        } while (indiceExistente != -1);
 
@@ -278,7 +280,7 @@ public class P4EJ1 {
 		        while (nuevaCantidad < 0) {
 		             nuevaCantidad = pedirEnteroSeguro(sc, YELLOW + "Introduzca la cantidad disponible en stock (>= 0): " + RESET);
 		             if (nuevaCantidad < 0) {
-		                 System.out.println(RED + "❌ El stock no puede ser negativo." + RESET);
+		                 System.out.println(RED + " El stock no puede ser negativo." + RESET);
 		             }
 		        }
 		        sc.nextLine(); // Consumir salto de línea después de leerEntero
@@ -307,7 +309,7 @@ public class P4EJ1 {
 		        int indiceModificar = buscarIndiceProducto(nombreModificar, nombres, numProductos);
 
 		        if (indiceModificar == -1) {
-		            System.out.println(RED + "❌ ERROR: El producto '" + nombreModificar + "' no se encontró." + RESET);
+		            System.out.println(RED + " ERROR: El producto '" + nombreModificar + "' no se encontró." + RESET);
 		            return;
 		        }
 
@@ -332,7 +334,7 @@ public class P4EJ1 {
 		                String nuevoNombre = sc.nextLine().trim();
 		                if (!nuevoNombre.isEmpty()) {
 		                    if (!nuevoNombre.equalsIgnoreCase(nombres[indiceModificar]) && buscarIndiceProducto(nuevoNombre, nombres, numProductos) != -1) {
-		                        System.out.println(RED + "❌ ERROR: El nombre '" + nuevoNombre + "' ya existe. No se modificó el nombre." + RESET);
+		                        System.out.println(RED + " ERROR: El nombre '" + nuevoNombre + "' ya existe. No se modificó el nombre." + RESET);
 		                    } else {
 		                        nombres[indiceModificar] = nuevoNombre;
 		                        modificado = true;
@@ -350,7 +352,7 @@ public class P4EJ1 {
 		                while (nuevoStock < 0) {
 		                     nuevoStock = pedirEnteroSeguro(sc, YELLOW + "Nuevo stock (Actual: " + stock[indiceModificar] + "): " + RESET);
 		                     if (nuevoStock < 0) {
-		                         System.out.println(RED + "❌ El stock no puede ser negativo." + RESET);
+		                         System.out.println(RED + "El stock no puede ser negativo." + RESET);
 		                     }
 		                }
 		                sc.nextLine();
@@ -363,7 +365,7 @@ public class P4EJ1 {
 		                
 		                if (!nuevoNombreTodo.isEmpty() && !nuevoNombreTodo.equalsIgnoreCase(nombres[indiceModificar])) {
 		                    if (buscarIndiceProducto(nuevoNombreTodo, nombres, numProductos) != -1) {
-		                        System.out.println(RED + "❌ ERROR: El nombre '" + nuevoNombreTodo + "' ya existe. No se modificó el nombre." + RESET);
+		                        System.out.println(RED + " ERROR: El nombre '" + nuevoNombreTodo + "' ya existe. No se modificó el nombre." + RESET);
 		                    } else {
 		                        nombres[indiceModificar] = nuevoNombreTodo;
 		                        modificado = true;
@@ -380,7 +382,7 @@ public class P4EJ1 {
 		                while (nuevoStockTodo < 0) {
 		                     nuevoStockTodo = pedirEnteroSeguro(sc, YELLOW + "Nuevo stock (Actual: " + stock[indiceModificar] + "): " + RESET);
 		                     if (nuevoStockTodo < 0) {
-		                         System.out.println(RED + "❌ El stock no puede ser negativo." + RESET);
+		                         System.out.println(RED + " El stock no puede ser negativo." + RESET);
 		                     }
 		                }
 		                sc.nextLine();
@@ -403,7 +405,7 @@ public class P4EJ1 {
 		        }
 		    }
 
-		    // NANI A4: BAJA DE PRODUCTO
+		    // NANI A4: BAJA DE PRODUCTO (opcion 4)
 		    public static int bajaProducto(Scanner scanner, String[] nombres, double[] precios, int[] stock, int numProductos) {
 
 		        if (numProductos == 0) {
@@ -417,7 +419,7 @@ public class P4EJ1 {
 		        int indiceEliminar = buscarIndiceProducto(nombreBaja, nombres, numProductos);
 
 		        if (indiceEliminar == -1) {
-		            System.out.println(RED + "❌ ERROR: El producto '" + nombreBaja + "' no se encontró en el almacén." + RESET);
+		            System.out.println(RED + "ERROR: El producto '" + nombreBaja + "' no se encontró en el almacén." + RESET);
 		            return numProductos;
 		        }
 
@@ -466,7 +468,7 @@ public class P4EJ1 {
 
 		 // SINA B4: Agregar Producto al Carrito (Opción 6)
 		    /**
-		     * @return Array de ints con {numArticulosCarrito actualizado, nuevo_o_existente_articulo}
+		     * return Array de ints con {numArticulosCarrito actualizado, nuevo_o_existente_articulo}
 		     */
 		    public static int[] agregarProductoAlCarrito(Scanner sc, String[] nombres, double[] precios, int[] stock, int numProductos, int[] carritoIDs, int[] carritoCantidades, int numArticulosCarrito) {
 		        
@@ -483,12 +485,12 @@ public class P4EJ1 {
 		        int idProducto = pedirEnteroSeguro(sc, YELLOW + "Introduzca el ID del producto a agregar: " + RESET);
 
 		        if (idProducto < 0 || idProducto >= numProductos) {
-		            System.out.println(RED + "❌ ID de producto inválido." + RESET);
+		            System.out.println(RED + " ID de producto inválido." + RESET);
 		            return new int[]{numArticulosCarrito, -1};
 		        }
 
 		        if (stock[idProducto] <= 0) {
-		            System.out.println(RED + "❌ ERROR: El producto '" + nombres[idProducto] + "' está agotado (Stock: 0)." + RESET);
+		            System.out.println(RED + " ERROR: El producto '" + nombres[idProducto] + "' está agotado (Stock: 0)." + RESET);
 		            return new int[]{numArticulosCarrito, -1};
 		        }
 
@@ -500,9 +502,9 @@ public class P4EJ1 {
 		            cantidadDeseada = pedirEnteroSeguro(sc, YELLOW + "Introduzca la cantidad deseada (1 - " + cantidadMax + "): " + RESET);
 		            
 		            if (cantidadDeseada < 1) {
-		                System.out.println(RED + "❌ Debe pedir al menos 1 unidad." + RESET);
+		                System.out.println(RED + " Debe pedir al menos 1 unidad." + RESET);
 		            } else if (cantidadDeseada > cantidadMax) {
-		                System.out.println(RED + "❌ ERROR: Solo quedan " + cantidadMax + " unidades en stock. Intente con una cantidad menor." + RESET);
+		                System.out.println(RED + " ERROR: Solo quedan " + cantidadMax + " unidades en stock. Intente con una cantidad menor." + RESET);
 		            }
 		        }
 		        
@@ -527,7 +529,7 @@ public class P4EJ1 {
 		        } else {
 		            // Producto nuevo: añadir al final 
 		            if (numArticulosCarrito >= carritoIDs.length) {
-		                System.out.println(RED + "❌ El carrito no puede almacenar más tipos de artículos. Finalice la compra o elimine uno existente." + RESET);
+		                System.out.println(RED + " El carrito no puede almacenar más tipos de artículos. Finalice la compra o elimine uno existente." + RESET);
 		                return new int[]{numArticulosCarrito, -1};
 		            }
 		            carritoIDs[numArticulosCarrito] = idProducto;
@@ -571,9 +573,9 @@ public class P4EJ1 {
 
 		        // Formato corregido y estable
 		        System.out.println("-----------------------------------------------------------------------------------");
-		        System.out.println(CYAN + String.format("Total Subtotal (Sin IVA): %65s €%.2f", "", totalSinIVA) + RESET);
-		        System.out.println(CYAN + String.format("IVA (%.0f%%): %74s €%.2f", IVA_APLICADO * 100, "", iva) + RESET);
-		        System.out.println(GREEN + String.format("TOTAL A PAGAR (Con IVA): %66s €%.2f", "", totalConIVA) + RESET);
+		        System.out.println(CYAN + String.format("Total Subtotal (Sin IVA): %49s €%.2f", "", totalSinIVA) + RESET);
+		        System.out.println(CYAN + String.format("IVA (%.0f%%): %65s €%.2f", IVA_APLICADO * 100, "", iva) + RESET);
+		        System.out.println(GREEN + String.format("TOTAL A PAGAR (Con IVA): %50s €%.2f", "", totalConIVA) + RESET);
 		    }
 		    
 		    // SINA B5: Finalizar Compra y Pagar (Opción 8)
@@ -599,9 +601,17 @@ public class P4EJ1 {
 		        }
 		        
 		        // 3. RESETEAR CARRITO
-		        System.out.println(GREEN + "\n========================================================" + RESET);
-		        System.out.println(GREEN + "✅ TRANSACCIÓN COMPLETADA. ¡Gracias por su compra!" + RESET);
-		        System.out.println(GREEN + "========================================================" + RESET);
+
+		        System.out.println(GREEN + "\n===========================" + RESET);
+		        System.out.println(GREEN + "✅ TRANSACCIÓN COMPLETADA." + RESET);
+		        System.out.println(GREEN + "──────▄▀▄─────▄▀▄\r\n"
+						+ "─────▄█░░▀▀▀▀▀░░█▄\r\n"
+						+ "─▄▄──█░░░░░░░░░░░█──▄▄\r\n"
+						+ "█▄▄█─█░░▀░░┬░░▀░░█─█▄▄█\r\n"
+						+ "");
+		        System.out.println(GREEN + "¡Gracias por su compra!                           " + RESET);
+		        System.out.println(GREEN + "===========================" + RESET);
+		      
 		        
 		        return 0; // El nuevo número de artículos en el carrito es cero
 		    }
