@@ -40,6 +40,35 @@ public class P4EJ1 {
 		 *  
 		 *  */
 		 Scanner sc = new Scanner(System.in);
+		 
+		// Nani: Declaración de los arrays y el contador real de productos
+			String[] nombres = new String[10]; 
+			double[] precios = new double[10];
+			int[] stock = new int[10];
+			int numProductos = 0;
+			
+			
+			// Nani: Carga inicial de datos
+			nombres[0] = "PlayStation 5 (PS5)"; precios[0] = 549.99; stock[0] = 3;
+			nombres[1] = "Nintendo Switch OLED"; precios[1] = 349.00; stock[1] = 5;
+			nombres[2] = "Cyberpunk 2077"; precios[2] = 49.99; stock[2] = 25;
+			nombres[3] = "Control DualSense PS5"; precios[3] = 69.90; stock[3] = 12;
+			nombres[4] = "Mario Kart 8 Deluxe"; precios[4] = 59.99; stock[4] = 30;
+			nombres[5] = "Final Fantasy XVI"; precios[5] = 79.99; stock[5] = 18;
+			nombres[6] = "Figura Coleccionable Valorant"; precios[6] = 45.50; stock[6] = 10;
+			nombres[7] = "Headset Oficial PS5 Pulse 3D"; precios[7] = 99.00; stock[7] = 8;
+			nombres[8] = "Super Mario Bros. Wonder"; precios[8] = 59.99; stock[8] = 22;
+			nombres[9] = "Tarjeta de Regalo Pavos (50€)"; precios[9] = 50.00; stock[9] = 40;
+
+			numProductos = 10;
+
+		 
+		 
+		 
+		 
+		 
+		 
+		 
 
 		System.out.println(BLUE + "##########################################" + RESET);
 		System.out.println(BLUE + "#                                        #" + RESET);
@@ -69,9 +98,7 @@ public class P4EJ1 {
 	                "Super Mario Odyssey "
 	        };
 
-	        double precios[] = {
-	                59.99, 49.99, 19.99, 29.99, 39.99, 24.99, 44.99
-	        };
+	        
 	     // Persona B: Métodos de compra y carrito
 
 	        int carrito[] = new int[0];
@@ -207,7 +234,90 @@ public class P4EJ1 {
 	}
 	
 	 
-	
+	// =========================================================
+		// TAREA DE NANI (A2): ARRAYS DINÁMICOS
+		// =========================================================
+		public static String[] redimensionarArrayString(String[] arrayOriginal, int numElementosActuales, int nuevoTamaño) {
+			String[] nuevoArray = new String[nuevoTamaño];
+			// Copiamos solo los elementos reales que tienen datos
+			for (int i = 0; i < numElementosActuales; i++) {
+				nuevoArray[i] = arrayOriginal[i];
+			}
+			System.out.println(CYAN + "Array de Nombres redimensionado a tamaño: " + nuevoTamaño + RESET);
+			return nuevoArray;
+		}
+
+
+
+		public static double[] redimensionarArrayDouble(double[] arrayOriginal, int numElementosActuales, int nuevoTamanio) {
+			double[] nuevoArray = new double[nuevoTamanio];
+			for (int i = 0; i < numElementosActuales; i++) {
+				nuevoArray[i] = arrayOriginal[i];
+			}
+			System.out.println(CYAN + "Array de Precios redimensionado a tamaño: " + nuevoTamanio + RESET);
+			return nuevoArray;
+
+		}
+		public static int[] redimensionarArrayInt(int[] arrayOriginal, int numElementosActuales, int nuevoTamanio) {
+			int[] nuevoArray = new int[nuevoTamanio];
+			for (int i = 0; i < numElementosActuales; i++) {
+				nuevoArray[i] = arrayOriginal[i];
+			}
+			System.out.println(CYAN + "Array de Stock redimensionado a tamaño: " + nuevoTamanio + RESET);
+			return nuevoArray;
+		}
+		
+		// =========================================================
+		// TAREA DE NANI (A3): ALTA DE PRODUCTO
+		// =========================================================
+
+	/*public static int altaProducto(Scanner sc , String[]nombres ,double[] precios,int[] stock,int numProductos) {
+		if (numProductos== nombres.length) {
+			System.out.println(RED + "❌ ERROR: Capacidad del almacén agotada. Es necesario redimensionar (Opción no implementada en este punto)." + RESET);
+			// Devolvemos el mismo número de productos para no romper el contador.
+	        return numProductos;
+		}
+		
+		String nuevoNombre ="";
+		int indiceExistente=-1;
+		
+		// Bucle para asegurar que el nombre es único
+	    do {
+	        System.out.print(YELLOW + "Introduzca el nombre del nuevo producto: " + RESET);
+	        nuevoNombre = sc.nextLine().trim();
+
+	        // Controlamos que no esté vacío antes de buscar
+	        if (nuevoNombre.isEmpty()) {
+	            System.out.println(RED + "❌ El nombre del producto no puede estar vacío." + RESET);
+	            indiceExistente = 0; // Para forzar la repetición
+	            continue;
+	        }
+	        
+	        indiceExistente = buscarIndiceProducto(nuevoNombre, nombres, numProductos);
+	        
+	        if (indiceExistente != -1) {
+	            System.out.println(RED + "⚠️ ERROR: El producto '" + nuevoNombre + "' ya está registrado. Debe introducir uno diferente." + RESET);
+	        }
+	    } while (indiceExistente != -1);
+	    
+	    double nuevoPrecio = leerDoublePositivo(scanner, "Introduzca el precio unitario (> 0): ");
+	    int nuevaCantidad = leerEnteroNoNegativo(scanner, "Introduzca la cantidad disponible en stock (>= 0): ");
+	    
+	    // 4. Inserción (A3)
+	    nombres[numProductos] = nuevoNombre;
+	    precios[numProductos] = nuevoPrecio;
+	    stock[numProductos] = nuevaCantidad; 
+	    
+	    System.out.println(GREEN + "✅ Producto '" + nuevoNombre + "' agregado con éxito en el índice " + numProductos + "." + RESET);
+	    
+	    return numProductos + 1; // Devolver el nuevo contador
+	}
+
+		
+	}
+
+	}*/
+
 	
 	
 	
