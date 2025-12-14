@@ -288,7 +288,57 @@ public class P4EJ1 {
 		    System.out.println(CYAN + "Array de Stock redimensionado a tamaño: " + nuevoTamanio + RESET);
 		    return nuevoArray;
 		}
-		
+		// =========================================================
+		// TAREA DE NANI (A3): ALTA DE PRODUCTO
+		// =========================================================
+
+		/**
+		 * @cabecera public static int altaProducto(Scanner sc, String[] nombres, double[] precios, int[] stock, int numProductos)
+		 * @descripcion Permite dar de alta un nuevo producto, validando que el nombre no exista.
+		 * @return El nuevo número de productos (numProductos + 1) o el mismo si falla.
+		 */
+		public static int altaProducto(Scanner sc , String[]nombres ,double[] precios,int[] stock,int numProductos) {
+		    
+		    // Si el main NO redimensionó, avisamos y salimos.
+		    if (numProductos == nombres.length) {
+		        System.out.println(RED + "❌ ERROR: Capacidad del almacén agotada. (El Main debe gestionar la redimensión)." + RESET);
+		        return numProductos;
+		    }
+		    
+		    String nuevoNombre ="";
+		    int indiceExistente=-1;
+		    
+		    // Bucle para asegurar que el nombre es único (Usa A5)
+		    do {
+		        System.out.print(YELLOW + "Introduzca el nombre del nuevo producto: " + RESET);
+		        nuevoNombre = sc.nextLine().trim();
+
+		        if (nuevoNombre.isEmpty()) {
+		            System.out.println(RED + "❌ El nombre del producto no puede estar vacío." + RESET);
+		            indiceExistente = 0; 
+		            continue;
+		        }
+		        
+		        indiceExistente = buscarIndiceProducto(nuevoNombre, nombres, numProductos);
+		        
+		        if (indiceExistente != -1) {
+		            System.out.println(RED + "⚠️ ERROR: El producto '" + nuevoNombre + "' ya está registrado. Debe introducir uno diferente." + RESET);
+		        }
+		    } while (indiceExistente != -1);
+		    
+		    // Lectura segura de datos (requiere las funciones de apoyo de Sina: leerDoublePositivo, leerEnteroNoNegativo)
+		    double nuevoPrecio = leerDoublePositivo(sc, "Introduzca el precio unitario (> 0): ");
+		    int nuevaCantidad = leerEnteroNoNegativo(sc, "Introduzca la cantidad disponible en stock (>= 0): ");
+		    
+		    // Inserción en la posición numProductos
+		    nombres[numProductos] = nuevoNombre;
+		    precios[numProductos] = nuevoPrecio;
+		    stock[numProductos] = nuevaCantidad; 
+		    
+		    System.out.println(GREEN + "✅ Producto '" + nuevoNombre + "' agregado con éxito en el índice " + numProductos + "." + RESET);
+		    
+		    return numProductos + 1; // Devolver el nuevo contador
+		}
 		
 		
 		// =========================================================
