@@ -13,12 +13,6 @@ public class P4EJ1 {
 	public static final String FUCHSIA = "\u001B[95m";
 	public static final String SALMON = "\u001B[38;5;209m";
 	public static final String WHITE = "\u001B[37m";
-	public static final String BLACK_BG = "\u001B[40m";
-	public static final String SKIN_BG = "\u001B[48;5;253m";
-	public static final String HAIR_LIGHT_BG = "\u001B[48;5;45m";
-	public static final String HAIR_DARK_BG = "\u001B[48;5;37m";
-	public static final String PINK_BG = "\u001B[48;5;201m";
-	public static final String GRAY_BG = "\u001B[48;5;240m";
 	public static final double IVA_APLICADO = 0.21; // 21%
 
 	public static void main(String[] args) {
@@ -162,7 +156,7 @@ public class P4EJ1 {
 		System.out.println(LIGHT_PINK + "|" + RESET + " " + WHITE + "[6] Agregar Producto al Carrito     " + " ".repeat(6) + LIGHT_PINK + "|" + RESET);
 		System.out.println(LIGHT_PINK + "|" + RESET + " " + WHITE + "[7] Eliminar Articulo Del Carrito     " + " ".repeat(9) + LIGHT_PINK + "|" + RESET);
 		System.out.println(LIGHT_PINK + "|" + RESET + " " + WHITE + "[8] Ver Carrito Actual" + " ".repeat(20) + LIGHT_PINK + "|" + RESET);
-		System.out.println(LIGHT_PINK + "|" + RESET + " " + WHITE + "[9] Finalizar Compra y Pagar     " + " ".repeat(9) + LIGHT_PINK + "|" + RESET);
+		System.out.println(LIGHT_PINK + "|" + RESET + " " + WHITE + "[] Finalizar Compra y Pagar     " + " ".repeat(9) + LIGHT_PINK + "|" + RESET);
 
 		System.out.println(LIGHT_PINK + "|"+ "-".repeat(43) + "|" + RESET);
 		System.out.println(LIGHT_PINK + "|" + RESET + " " + WHITE + "[0] Salir y Cerrar Tienda" + " ".repeat(17) + LIGHT_PINK + "|" + RESET);
